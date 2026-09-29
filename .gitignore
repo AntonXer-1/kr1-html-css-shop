@@ -11,6 +11,8 @@ Thumbs.db
 # Временные файлы
 *.tmp
 *.temp
+__pycache__/
+*.pyc
 
 # Переменные окружения
 .env
