@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Учебный интернет-магазин</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -50,18 +51,21 @@
                 <h3>Товар 1</h3>
                 <p>Краткое описание учебного товара.</p>
                 <p>Цена: 1000 руб.</p>
+                <button class="button product-card__button" type="button" data-product="Товар 1">Заказать</button>
             </article>
 
             <article class="product-card">
                 <h3>Товар 2</h3>
                 <p>Краткое описание учебного товара.</p>
                 <p>Цена: 1500 руб.</p>
+                <button class="button product-card__button" type="button" data-product="Товар 2">Заказать</button>
             </article>
 
             <article class="product-card">
                 <h3>Товар 3</h3>
                 <p>Краткое описание учебного товара.</p>
                 <p>Цена: 2000 руб.</p>
+                <button class="button product-card__button" type="button" data-product="Товар 3">Заказать</button>
             </article>
         </section>
 
@@ -79,5 +83,70 @@
         <p>&copy; 2026 Учебный проект. Все права защищены.</p>
         <p>Дисциплина: Фронтенд и бэкенд разработка</p>
     </footer>
+
+    <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+        <h2 id="order-dialog-title">Оформление заявки</h2>
+
+        <form class="order-form" id="order-form" action="#" method="post" novalidate>
+            <input id="selected-product" name="selected-product" type="hidden">
+
+            <div class="form-field">
+                <label for="name">Имя</label>
+                <input id="name" name="name" type="text" minlength="2" autocomplete="name" required>
+            </div>
+
+            <div class="form-field">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="form-field">
+                <label for="phone">Телефон</label>
+                <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    placeholder="+7 (900) 000-00-00"
+                    pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+                    required
+                >
+                <small>Формат: +7 (900) 000-00-00</small>
+            </div>
+
+            <div class="form-field">
+                <label for="date">Желаемая дата</label>
+                <input id="date" name="date" type="date">
+            </div>
+
+            <div class="form-field">
+                <label for="topic">Тема обращения</label>
+                <select id="topic" name="topic" required>
+                    <option value="">Выберите тему</option>
+                    <option value="product">Заказ товара</option>
+                    <option value="consultation">Консультация</option>
+                    <option value="delivery">Доставка</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="comment">Комментарий</label>
+                <textarea id="comment" name="comment" rows="4"></textarea>
+            </div>
+
+            <div class="form-field form-field--checkbox">
+                <input id="agreement" name="agreement" type="checkbox" required>
+                <label for="agreement">Я согласен на обработку персональных данных</label>
+            </div>
+
+            <div class="form-actions">
+                <button id="close-order-dialog" type="button">Закрыть</button>
+                <button class="button" type="submit">Отправить</button>
+            </div>
+        </form>
+    </dialog>
+
+    <p class="success-message" id="success-message" hidden>Форма успешно отправлена!</p>
 </body>
 </html>

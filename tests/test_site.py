@@ -55,5 +55,57 @@ class SemanticPageTests(unittest.TestCase):
         self.assertEqual(len(product_cards), 3)
 
 
+class OrderFormMarkupTests(unittest.TestCase):
+    def test_product_cards_offer_order_actions(self):
+        elements = parse_index()
+        order_buttons = [
+            attrs
+            for tag, attrs in elements
+            if tag == "button"
+            and "product-card__button" in attrs.get("class", "").split()
+        ]
+
+        self.assertEqual(len(order_buttons), 3)
+        self.assertEqual(
+            {attrs.get("data-product") for attrs in order_buttons},
+            {"Товар 1", "Товар 2", "Товар 3"},
+        )
+
+    def test_order_dialog_contains_the_required_named_fields(self):
+        elements = parse_index()
+        dialogs = [attrs for tag, attrs in elements if tag == "dialog"]
+        fields = {
+            attrs.get("name"): attrs
+            for tag, attrs in elements
+            if tag in {"input", "select", "textarea"} and attrs.get("name")
+        }
+
+        self.assertEqual(len(dialogs), 1)
+        self.assertEqual(dialogs[0].get("id"), "order-dialog")
+        self.assertTrue(
+            {
+                "selected-product",
+                "name",
+                "email",
+                "phone",
+                "date",
+                "topic",
+                "comment",
+                "agreement",
+            }.issubset(fields)
+        )
+        self.assertIn("required", fields["name"])
+        self.assertIn("required", fields["email"])
+        self.assertIn("required", fields["phone"])
+        self.assertIn("required", fields["topic"])
+        self.assertIn("required", fields["agreement"])
+
+    def test_page_loads_the_form_controller_after_html_parsing(self):
+        elements = parse_index()
+        scripts = [attrs for tag, attrs in elements if tag == "script"]
+
+        self.assertIn({"src": "js/main.js", "defer": None}, scripts)
+
+
 if __name__ == "__main__":
     unittest.main()
