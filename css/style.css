@@ -1,4 +1,41 @@
-/* Универсальная модель размеров включает padding и border в ширину блока. */
+/* ===============================
+   1. Переменные проекта
+   =============================== */
+:root {
+    /* Цвета */
+    --color-bg: #ffffff;
+    --color-white: #ffffff;
+    --color-text: #222222;
+    --color-muted: #666666;
+    --color-primary: #0057b8;
+    --color-primary-dark: #003f86;
+    --color-border: #dddddd;
+    --color-surface: #f7f7f7;
+    --color-surface-accent: #eef5ff;
+    --color-danger: #b00020;
+    --color-danger-bg: #fff4f5;
+    --color-success: #168a2f;
+    --color-success-bg: #eefaf0;
+    --color-backdrop: rgb(0 0 0 / 55%);
+
+    /* Единая шкала отступов */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+
+    /* Скругления и размеры */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --container-width: 1100px;
+    --dialog-width: 560px;
+}
+
+/* ===============================
+   2. Базовые стили
+   =============================== */
 * {
     box-sizing: border-box;
 }
@@ -7,44 +44,108 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.5;
-    color: #222222;
-    background-color: #ffffff;
+    color: var(--color-text);
+    background-color: var(--color-bg);
 }
 
 header,
 main,
 footer {
-    padding: 20px;
+    padding: var(--space-lg);
 }
 
 header,
 footer {
-    background-color: #f2f2f2;
+    background-color: var(--color-surface);
 }
 
+/* ===============================
+   3. Общие элементы интерфейса
+   =============================== */
+a {
+    color: var(--color-primary);
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+button,
+.button {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    border-color: var(--color-primary);
+    background-color: var(--color-surface-accent);
+}
+
+.button {
+    border-color: transparent;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+.button:hover:not(:disabled) {
+    border-color: transparent;
+    color: var(--color-white);
+    background-color: var(--color-primary-dark);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ===============================
+   4. Компоненты страницы
+   =============================== */
 .site-header {
-    max-width: 1100px;
+    max-width: var(--container-width);
     margin: 0 auto;
 }
 
 .site-logo {
     font-weight: bold;
-    color: #222222;
+    color: var(--color-text);
     text-decoration: none;
+}
+
+.site-logo:hover {
+    color: var(--color-primary-dark);
 }
 
 .site-nav__list {
     padding: 0;
-    margin: 16px 0 0;
+    margin: var(--space-md) 0 0;
     list-style: none;
 }
 
 .site-nav__list li {
-    margin-bottom: 8px;
+    margin-bottom: var(--space-sm);
 }
 
 .site-nav__list a {
-    color: #0057b8;
     text-decoration: none;
 }
 
@@ -53,16 +154,16 @@ footer {
 }
 
 .hero {
-    max-width: 1100px;
-    margin: 0 auto 32px;
-    padding: 32px 20px;
-    background-color: #eef5ff;
-    border-radius: 12px;
+    max-width: var(--container-width);
+    margin: 0 auto var(--space-xl);
+    padding: var(--space-xl) var(--space-lg);
+    background-color: var(--color-surface-accent);
+    border-radius: var(--radius-lg);
 }
 
 .section {
-    max-width: 1100px;
-    margin: 0 auto 32px;
+    max-width: var(--container-width);
+    margin: 0 auto var(--space-xl);
 }
 
 .section h2,
@@ -72,46 +173,39 @@ footer {
 }
 
 .product-card {
-    margin-bottom: 16px;
-    padding: 16px;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
-    background-color: #ffffff;
+    margin-bottom: var(--space-md);
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg);
 }
 
-.button {
-    display: inline-block;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    color: #ffffff;
-    background-color: #0057b8;
-    font: inherit;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #003f86;
+.product-card:hover {
+    border-color: var(--color-primary);
 }
 
 .aside-info {
-    max-width: 1100px;
-    margin: 0 auto 32px;
-    padding: 16px;
-    border-left: 4px solid #0057b8;
-    background-color: #f7f7f7;
+    max-width: var(--container-width);
+    margin: 0 auto var(--space-xl);
+    padding: var(--space-md);
+    border-left: 4px solid var(--color-primary);
+    background-color: var(--color-surface);
 }
 
+/* ===============================
+   5. Форма и модальное окно
+   =============================== */
 .order-dialog {
-    width: min(520px, calc(100% - 32px));
-    padding: 24px;
+    width: min(calc(100% - var(--space-xl)), var(--dialog-width));
+    padding: var(--space-lg);
     border: none;
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
+    color: var(--color-text);
+    background-color: var(--color-bg);
 }
 
 .order-dialog::backdrop {
-    background-color: rgb(0 0 0 / 55%);
+    background-color: var(--color-backdrop);
 }
 
 .order-dialog h2 {
@@ -119,12 +213,12 @@ footer {
 }
 
 .form-field {
-    margin-bottom: 16px;
+    margin-bottom: var(--space-md);
 }
 
 .form-field label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: var(--space-xs);
     font-weight: bold;
 }
 
@@ -132,21 +226,34 @@ footer {
 .form-field select,
 .form-field textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #aaaaaa;
-    border-radius: 6px;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    background-color: var(--color-bg);
     font: inherit;
+    accent-color: var(--color-primary);
+}
+
+/* :where() не повышает специфичность проверки доступности поля. */
+.form-field input:hover:where(:not(:disabled)),
+.form-field select:hover:where(:not(:disabled)),
+.form-field textarea:hover:where(:not(:disabled)),
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--color-primary);
 }
 
 .form-field--checkbox {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: var(--space-sm);
 }
 
 .form-field--checkbox input {
     width: auto;
-    margin-top: 5px;
+    margin-top: var(--space-xs);
 }
 
 .form-field--checkbox label {
@@ -156,44 +263,39 @@ footer {
 
 .form-field small {
     display: block;
-    margin-top: 4px;
-    color: #555555;
+    margin-top: var(--space-xs);
+    color: var(--color-muted);
 }
 
-.form-field input:focus-visible,
-.form-field select:focus-visible,
-.form-field textarea:focus-visible {
-    outline: 3px solid #99c4ff;
-    outline-offset: 2px;
+/* Ошибка сохраняет цвет даже при наведении и фокусе, без !important. */
+.form-field input[aria-invalid="true"],
+.form-field select[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+    border-color: var(--color-danger);
+    background-color: var(--color-danger-bg);
 }
 
-[aria-invalid="true"] {
-    border-color: #b00020 !important;
-    background-color: #fff4f5;
+.form-field input[type="checkbox"][aria-invalid="true"] {
+    outline: 2px solid var(--color-danger);
+    outline-offset: 3px;
 }
 
 .form-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.form-actions button {
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    font: inherit;
-    cursor: pointer;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
 }
 
 .success-message {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
+    right: var(--space-lg);
+    bottom: var(--space-lg);
+    max-width: min(calc(100% - var(--space-xl)), var(--container-width));
     margin: 0;
-    padding: 14px 18px;
-    border-radius: 8px;
-    color: #ffffff;
-    background-color: #16733b;
+    padding: var(--space-md);
+    border-left: 4px solid var(--color-success);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    background-color: var(--color-success-bg);
 }
