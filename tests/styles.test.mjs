@@ -19,6 +19,7 @@ async function withPage(check) {
 
 test('changing the primary token updates buttons, links and the aside accent', () => withPage(async (page) => {
     await page.evaluate(() => document.documentElement.style.setProperty('--color-primary', '#663399'));
+    await page.waitForFunction(() => getComputedStyle(document.querySelector('.product-card__button')).backgroundColor === 'rgb(102, 51, 153)');
     for (const [selector, property] of [
         ['.product-card__button', 'backgroundColor'],
         ['.site-nav a', 'color'],
@@ -31,7 +32,7 @@ test('changing the primary token updates buttons, links and the aside accent', (
 test('keyboard focus is visible on links, buttons and form fields', () => withPage(async (page) => {
     await page.evaluate(() => document.documentElement.style.setProperty('--color-primary', '#663399'));
     await page.keyboard.press('Tab');
-    const logo = page.locator('.site-logo');
+    const logo = page.locator('.site-header .site-logo');
     assert.equal(await logo.evaluate((element) => element.matches(':focus-visible')), true);
     assert.notEqual(await logo.evaluate((element) => getComputedStyle(element).outlineStyle), 'none');
     assert.equal(await logo.evaluate((element) => getComputedStyle(element).outlineColor), 'rgb(102, 51, 153)');

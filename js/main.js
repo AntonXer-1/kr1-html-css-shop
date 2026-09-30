@@ -4,28 +4,39 @@ const closeDialogButton = document.getElementById('close-order-dialog');
 const selectedProductInput = document.getElementById('selected-product');
 const orderForm = document.getElementById('order-form');
 const successMessage = document.getElementById('success-message');
+const selectedProductName = document.getElementById('selected-product-name');
+
+function clearValidation() {
+    Array.from(orderForm.elements).forEach((element) => {
+        if (element.willValidate) {
+            element.removeAttribute('aria-invalid');
+        }
+    });
+}
 
 orderButtons.forEach((button) => {
     button.addEventListener('click', () => {
+        if (!orderDialog || !orderForm) return;
+        orderForm.reset();
+        clearValidation();
         selectedProductInput.value = button.dataset.product;
+        if (selectedProductName) {
+            selectedProductName.textContent = button.dataset.product;
+        }
         successMessage.hidden = true;
         orderDialog.showModal();
     });
 });
 
-closeDialogButton.addEventListener('click', () => {
+closeDialogButton?.addEventListener('click', () => {
     orderDialog.close();
 });
 
-orderForm.addEventListener('submit', (event) => {
+orderForm?.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const formElements = Array.from(orderForm.elements);
-    formElements.forEach((element) => {
-        if (element.willValidate) {
-            element.removeAttribute('aria-invalid');
-        }
-    });
+    clearValidation();
 
     if (!orderForm.checkValidity()) {
         formElements.forEach((element) => {
@@ -39,5 +50,5 @@ orderForm.addEventListener('submit', (event) => {
 
     successMessage.hidden = false;
     orderForm.reset();
-    orderDialog.close();
+    orderDialog?.close();
 });

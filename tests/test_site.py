@@ -68,7 +68,7 @@ class OrderFormMarkupTests(unittest.TestCase):
         self.assertEqual(len(order_buttons), 3)
         self.assertEqual(
             {attrs.get("data-product") for attrs in order_buttons},
-            {"Товар 1", "Товар 2", "Товар 3"},
+            {"Клавиатура Quiet", "Мышь Motion", "Наушники Focus"},
         )
 
     def test_order_dialog_contains_the_required_named_fields(self):

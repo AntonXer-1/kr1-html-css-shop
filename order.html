@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Форма с проверкой имени, e-mail, телефона и согласия. Данные не отправляются.">
+    <meta name="author" content="Чернышев Антон Дмитриевич, ЭФБО-02-25">
+    <title>Учебная заявка — DeskSupply</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+<header class="site-header" id="top"><div class="container site-header__inner">
+    <a class="site-logo" href="index.html" aria-label="DeskSupply — главная"><span class="site-logo__mark" aria-hidden="true">d.</span>DeskSupply</a>
+    <nav class="site-nav" aria-label="Основная навигация"><ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html">Главная</a></li>
+        <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+        <li><a class="site-nav__link" href="product.html">Товар</a></li>
+        <li><a class="site-nav__link" href="order.html" aria-current="page">Заявка</a></li>
+        <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+    </ul></nav>
+    <span class="site-header__note">Учебный магазин</span>
+</div></header>
+<main class="container">
+<p class="breadcrumbs"><a href="index.html">Главная</a> / Заявка</p><section class="page-intro"><p class="eyebrow">Следующий шаг</p><h1>Расскажите о вашем выборе</h1><p>Это учебная форма: проверим поля прямо в браузере, но не отправим их на сервер.</p></section><div class="order-layout"><section class="form-panel" aria-labelledby="order-title"><h2 id="order-title">Заявка на консультацию</h2><form class="order-form" id="order-form" action="#" method="post" novalidate>
+<p class="form-note">Демонстрация: данные не отправляются и не сохраняются. Используйте вымышленные данные. Поля со * обязательны.</p>
+<div class="form-field"><label for="selected-product">Интересующий товар</label><select id="selected-product" name="selected-product"><option value="">Нужна помощь с выбором</option><option>Клавиатура Quiet</option><option>Мышь Motion</option><option>Наушники Focus</option></select></div>
+<div class="form-field"><label for="name">Имя *</label><input id="name" name="name" type="text" minlength="2" autocomplete="name" required></div>
+<div class="form-field"><label for="email">E-mail *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+<div class="form-field"><label for="phone">Телефон *</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" aria-describedby="phone-hint" required><small id="phone-hint">Формат: +7 (900) 000-00-00</small></div>
+<div class="form-field"><label for="date">Желаемая дата</label><input id="date" name="date" type="date"></div>
+<div class="form-field"><label for="topic">Тема обращения *</label><select id="topic" name="topic" required><option value="">Выберите тему</option><option value="product">Заказ товара</option><option value="consultation">Консультация</option><option value="delivery">Доставка</option></select></div>
+<div class="form-field"><label for="comment">Комментарий</label><textarea id="comment" name="comment" rows="3" placeholder="Что важно для вашего рабочего места?"></textarea></div>
+<div class="form-field form-field--checkbox"><input id="agreement" name="agreement" type="checkbox" required><label for="agreement">Я согласен на обработку данных в учебном примере *</label></div>
+<div class="form-actions"><button class="button" type="submit">Проверить заявку</button></div>
+</form></section><aside class="order-aside"><p class="eyebrow">Как это устроено</p><h2>Без неожиданных шагов</h2><ol><li>Выберите товар или тему.</li><li>Заполните обязательные поля.</li><li>Нажмите «Проверить заявку».</li></ol><p>Браузер проверит e-mail, формат телефона и согласие. При ошибке поле выделится и получит фокус.</p><p><strong>Важно:</strong> администратор не увидит эту заявку: серверной части пока нет.</p><a href="catalog.html">Вернуться к товарам ↗</a></aside></div>
+</main>
+<footer class="site-footer" id="contacts"><div class="container site-footer__inner">
+    <div><a class="site-logo" href="index.html">DeskSupply</a><p>Вещи для работы. Пространство для идей.</p></div>
+    <div><a href="contacts.html">Контакты проекта</a><p>Чернышев Антон Дмитриевич · ЭФБО-02-25</p><small>© 2026 · Учебный проект, продажи не осуществляются.</small></div>
+</div></footer>
+<a class="back-top" href="#top" aria-label="Вернуться наверх">↑</a>
+
+<p class="success-message" id="success-message" role="status" hidden>Поля проверены. Это демонстрация: заявка не отправлена и не сохранена.</p>
+</body>
+</html>
