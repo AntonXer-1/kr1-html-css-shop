@@ -65,3 +65,26 @@ test('all pages fit narrow viewport without horizontal overflow', async () => {
         }, 375);
     }
 });
+test('demo cannot submit when JavaScript is unavailable', async () => {
+    const page = await browser.newPage({ javaScriptEnabled: false });
+    const outbound = [];
+    page.on('request', req => { if (req.method() === 'POST') outbound.push(req.url()); });
+    try {
+        await page.goto(new URL('../order.html', import.meta.url).href);
+        assert.equal(await page.locator('[type="submit"]').isEnabled(), false);
+        await page.locator('#name').fill('Тест');
+        await page.locator('#name').press('Enter');
+        assert.deepEqual(outbound, []);
+    } finally { await page.close(); }
+});
+test('a failed second submission clears the previous success notice', () => open('order.html', async page => {
+    await page.locator('#name').fill('Тест');
+    await page.locator('#email').fill('test@example.com');
+    await page.locator('#phone').fill('+7 (900) 123-45-67');
+    await page.locator('#topic').selectOption('consultation');
+    await page.locator('#agreement').check();
+    await page.locator('[type="submit"]').click();
+    assert.equal(await page.locator('#success-message').isVisible(), true);
+    await page.locator('[type="submit"]').click();
+    assert.equal(await page.locator('#success-message').isVisible(), false);
+}));

@@ -34,6 +34,7 @@ closeDialogButton?.addEventListener('click', () => {
 
 orderForm?.addEventListener('submit', (event) => {
     event.preventDefault();
+    successMessage.hidden = true;
 
     const formElements = Array.from(orderForm.elements);
     clearValidation();
@@ -52,3 +53,9 @@ orderForm?.addEventListener('submit', (event) => {
     orderForm.reset();
     orderDialog?.close();
 });
+
+// Разрешаем проверку только после подключения обработчика без сетевой отправки.
+const submitButton = document.getElementById('submit-order');
+if (submitButton) {
+    submitButton.disabled = false;
+}
