@@ -81,7 +81,7 @@ node --test tests/main.test.mjs
 node --test tests/*.test.mjs
 ```
 
-12 Python-тестов и 13 JS/Chromium-тестов проверяют структуру, переходы,
+12 Python-тестов и 15 JS/Chromium-тестов проверяют структуру, переходы,
 форму, состояния CSS и отсутствие переполнения при ширине 375 px.
 
 ## Как показать коммит README
