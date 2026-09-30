@@ -61,3 +61,14 @@ test('invalid field keeps its error border on hover and focus', () => withPage(a
     assert.equal(await field.evaluate((element) => getComputedStyle(element).borderTopColor), 'rgb(153, 0, 51)');
     assert.equal(await field.getAttribute('aria-invalid'), 'true');
 }));
+
+test('invalid checkbox has a distinct keyboard focus indicator', () => withPage(async (page) => {
+    await page.locator('.product-card__button').first().click();
+    await page.locator('[type="submit"]').click();
+    const checkbox = page.locator('#agreement');
+    const before = await checkbox.evaluate((element) => getComputedStyle(element).outlineStyle);
+    await page.locator('#comment').focus();
+    await page.keyboard.press('Tab');
+    assert.equal(await checkbox.evaluate((element) => element.matches(':focus-visible')), true);
+    assert.notEqual(await checkbox.evaluate((element) => getComputedStyle(element).outlineStyle), before);
+}));

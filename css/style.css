@@ -276,8 +276,8 @@ textarea:disabled {
 }
 
 .form-field input[type="checkbox"][aria-invalid="true"] {
-    outline: 2px solid var(--color-danger);
-    outline-offset: 3px;
+    /* Ошибка и клавиатурный фокус используют разные визуальные слои. */
+    box-shadow: 0 0 0 2px var(--color-danger);
 }
 
 .form-actions {
