@@ -17,3 +17,4 @@ __pycache__/
 # Переменные окружения
 .env
 .env.*
+node_modules/
