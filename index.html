@@ -1,57 +1,147 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Учебный магазин аксессуаров: клавиатура, мышь и наушники. Контрольная работа №1.">
-    <meta name="author" content="Чернышев Антон Дмитриевич, ЭФБО-02-25">
-    <title>Аксессуары для рабочего места — DeskSupply</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
-</head>
-<body>
-<header class="site-header" id="top"><div class="container site-header__inner">
-    <a class="site-logo" href="index.html" aria-label="DeskSupply — главная"><span class="site-logo__mark" aria-hidden="true">d.</span>DeskSupply</a>
-    <nav class="site-nav" aria-label="Основная навигация"><ul class="site-nav__list">
-        <li><a class="site-nav__link" href="index.html" aria-current="page">Главная</a></li>
-        <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-        <li><a class="site-nav__link" href="product.html">Товар</a></li>
-        <li><a class="site-nav__link" href="order.html">Заявка</a></li>
-        <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-    </ul></nav>
-    <span class="site-header__note">Учебный магазин</span>
-</div></header>
-<main class="container">
-<section class="hero" aria-labelledby="hero-title"><div class="hero__copy"><p class="eyebrow">Рабочее место, которое вдохновляет</p><h1 id="hero-title">Меньше шума.<br>Больше фокуса.</h1><p class="hero__description">Продуманные аксессуары для вашего стола. Соберите пространство, в котором приятно работать и создавать.</p><div class="hero__actions"><a class="button" href="catalog.html">Выбрать аксессуары ↗</a><a href="#popular">Популярное</a></div><div class="hero__meta"><span>01 / Компактно</span><span>02 / Удобно</span><span>03 / По делу</span></div></div><div class="hero__visual"><img src="images/keyboard.svg" alt="Компактная клавиатура Quiet на светлом фоне" width="480" height="320"><span class="hero__caption">QUIET / Сделайте место для идей</span></div></section>
-<section class="section" id="advantages" aria-labelledby="advantages-title"><p class="eyebrow">Наш подход</p><h2 id="advantages-title">Хорошие детали меняют всё</h2><ul class="advantages-list"><li><span>01</span><h3>Ничего лишнего</h3><p>Три понятные категории вместо бесконечного выбора.</p></li><li><span>02</span><h3>Характеристики открыты</h3><p>Размер, подключение и комплектация — до заявки.</p></li><li><span>03</span><h3>Комфорт каждый день</h3><p>Тихие клавиши, удобный хват и мягкие амбушюры.</p></li></ul></section>
-<section class="section" id="popular" aria-labelledby="popular-title"><div class="section__heading section__heading--row"><div><p class="eyebrow">Проверенная тройка</p><h2 id="popular-title">На вашем столе</h2></div><a href="catalog.html">Весь каталог ↗</a></div><div class="product-grid">
-<article class="product-card"><div class="product-card__visual"><span class="product-card__badge">Выбор редакции</span><img class="product-card__img" src="images/keyboard.svg" alt="Клавиатура Quiet: иллюстрация товара" width="480" height="320" loading="lazy"></div><div class="product-card__body"><p class="eyebrow">Клавиатуры</p><h3 class="product-card__title">Клавиатура Quiet</h3><p class="product-card__description">Компактный формат, тихие клавиши и больше места для идей.</p><p class="product-card__price">4 990 ₽</p><div class="product-card__actions"><a class="product-card__link" href="product.html">Подробнее ↗</a><button class="button product-card__button" type="button" data-product="Клавиатура Quiet">Заказать</button></div></div></article>
-<article class="product-card"><div class="product-card__visual"><span class="product-card__badge">Лёгкая · 72 г</span><img class="product-card__img" src="images/mouse.svg" alt="Мышь Motion: иллюстрация товара" width="480" height="320" loading="lazy"></div><div class="product-card__body"><p class="eyebrow">Мыши</p><h3 class="product-card__title">Мышь Motion</h3><p class="product-card__description">Точное управление и удобная форма для длинного рабочего дня.</p><p class="product-card__price">2 490 ₽</p><div class="product-card__actions"><a class="product-card__link" href="catalog.html#mouse-details">Подробнее ↗</a><button class="button product-card__button" type="button" data-product="Мышь Motion">Заказать</button></div></div></article>
-<article class="product-card"><div class="product-card__visual"><span class="product-card__badge">Для работы</span><img class="product-card__img" src="images/headphones.svg" alt="Наушники Focus: иллюстрация товара" width="480" height="320" loading="lazy"></div><div class="product-card__body"><p class="eyebrow">Аудио</p><h3 class="product-card__title">Наушники Focus</h3><p class="product-card__description">Мягкие амбушюры и чистый звук для сосредоточенной работы.</p><p class="product-card__price">6 990 ₽</p><div class="product-card__actions"><a class="product-card__link" href="catalog.html#headphones-details">Подробнее ↗</a><button class="button product-card__button" type="button" data-product="Наушники Focus">Заказать</button></div></div></article>
-</div></section>
-<aside class="aside-info"><strong>Учебный проект, реальные навыки.</strong><p>Пять связанных страниц, семантическая разметка, Flex/Grid и доступная форма. <a href="#advantages">Наш подход</a> · <a href="#contacts">Об авторе</a></p></aside><section class="section" id="faq" aria-labelledby="faq-title"><p class="eyebrow">Полезно знать</p><h2 id="faq-title">Перед выбором</h2><div class="faq">
-<details class="faq__item"><summary>Это настоящий магазин?</summary><p>Нет. Это учебный HTML/CSS-проект. Цены, товары и контакты демонстрационные; покупок и оплаты нет.</p></details>
-<details class="faq__item"><summary>Куда отправляется заявка?</summary><p>Никуда: сейчас форма только проверяет введённые значения в браузере. Сервер и база данных появятся на следующих этапах разработки.</p></details>
-<details class="faq__item"><summary>Как выбрать аксессуары?</summary><p>Для небольшого стола подойдёт компактная клавиатура. Для частых звонков — наушники с микрофоном. Проверьте интерфейс подключения в характеристиках.</p></details>
-</div></section>
-</main>
-<footer class="site-footer" id="contacts"><div class="container site-footer__inner">
-    <div><a class="site-logo" href="index.html">DeskSupply</a><p>Вещи для работы. Пространство для идей.</p></div>
-    <div><a href="contacts.html">Контакты проекта</a><p>Чернышев Антон Дмитриевич · ЭФБО-02-25</p><small>© 2026 · Учебный проект, продажи не осуществляются.</small></div>
-</div></footer>
-<a class="back-top" href="#top" aria-label="Вернуться наверх">↑</a>
-<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title"><h2 id="order-dialog-title">Оформление заявки</h2><form class="order-form" id="order-form" action="#" method="post" novalidate>
-<p class="form-note">Демонстрация: данные не отправляются и не сохраняются. Используйте вымышленные данные. Поля со * обязательны.</p>
-<input id="selected-product" name="selected-product" type="hidden"><p id="selected-product-name" class="order-form__selection"></p>
-<div class="form-field"><label for="name">Имя *</label><input id="name" name="name" type="text" minlength="2" autocomplete="name" required></div>
-<div class="form-field"><label for="email">E-mail *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-<div class="form-field"><label for="phone">Телефон *</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" aria-describedby="phone-hint" required><small id="phone-hint">Формат: +7 (900) 000-00-00</small></div>
-<div class="form-field"><label for="date">Желаемая дата</label><input id="date" name="date" type="date"></div>
-<div class="form-field"><label for="topic">Тема обращения *</label><select id="topic" name="topic" required><option value="">Выберите тему</option><option value="product">Заказ товара</option><option value="consultation">Консультация</option><option value="delivery">Доставка</option></select></div>
-<div class="form-field"><label for="comment">Комментарий</label><textarea id="comment" name="comment" rows="3" placeholder="Что важно для вашего рабочего места?"></textarea></div>
-<div class="form-field form-field--checkbox"><input id="agreement" name="agreement" type="checkbox" required><label for="agreement">Я согласен на обработку данных в учебном примере *</label></div>
-<div class="form-actions"><button class="button button--secondary" id="close-order-dialog" type="button">Закрыть</button><button class="button" type="submit">Проверить заявку</button></div>
-</form></dialog>
-<p class="success-message" id="success-message" role="status" hidden>Поля проверены. Это демонстрация: заявка не отправлена и не сохранена.</p>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Главная учебного интернет-магазина. Контрольная работа №1.">
+        <meta name="author" content="Чернышев Антон Дмитриевич, ЭФБО-02-25">
+        <title>Главная — Учебный интернет-магазин</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/main.js" defer>
+        </script>
+    </head>
+    <body>
+        <header id="top">
+            <div class="site-header">
+                <a class="site-logo" href="index.html">ShopProject</a>
+                <nav class="site-nav" aria-label="Основная навигация">
+                    <ul class="site-nav__list">
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="index.html" aria-current="page">Главная</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="catalog.html">Каталог</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="product.html">Товар</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="order.html">Заявка</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="contacts.html">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="hero">
+                <h1>Учебный интернет-магазин</h1>
+                <p>Пример многостраничного сайта на HTML и CSS.</p>
+                <a class="button" href="#popular">Перейти к товарам</a>
+            </section>
+            <section class="section" id="advantages">
+                <h2>Преимущества магазина</h2>
+                <ul>
+                    <li>Понятные описания товаров</li>
+                    <li>Таблица характеристик</li>
+                    <li>Удобная навигация</li>
+                </ul>
+            </section>
+            <section class="section" id="popular">
+                <h2>Популярные товары</h2>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <span class="product-card__badge">Популярный</span>
+                        <h3 class="product-card__title">Клавиатура Quiet</h3>
+                        <p class="product-card__description">Компактная проводная клавиатура.</p>
+                        <p class="product-card__price">4 990 ₽</p>
+                        <div class="product-card__actions">
+                            <a class="product-card__link" href="product.html">Подробнее</a>
+                            <button class="button product-card__button" type="button" data-product="Клавиатура Quiet">Заказать</button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <h3 class="product-card__title">Мышь Motion</h3>
+                        <p class="product-card__description">Беспроводная мышь для повседневной работы.</p>
+                        <p class="product-card__price">2 490 ₽</p>
+                        <div class="product-card__actions">
+                            <a class="product-card__link" href="catalog.html#mouse-details">Подробнее</a>
+                            <button class="button product-card__button" type="button" data-product="Мышь Motion">Заказать</button>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <h3 class="product-card__title">Наушники Focus</h3>
+                        <p class="product-card__description">Наушники с микрофоном для звонков.</p>
+                        <p class="product-card__price">6 990 ₽</p>
+                        <div class="product-card__actions">
+                            <a class="product-card__link" href="catalog.html#headphones-details">Подробнее</a>
+                            <button class="button product-card__button" type="button" data-product="Наушники Focus">Заказать</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <aside class="aside-info">
+                <h2>Информация о проекте</h2>
+                <p>Учебный проект. Продажи не осуществляются, данные формы не сохраняются.</p>
+                <a href="#advantages">Преимущества</a> · <a href="#contacts">Контакты</a>
+            </aside>
+        </main>
+        <footer id="contacts">
+            <p>© 2026 Учебный интернет-магазин.</p>
+            <p>Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
+            <a href="contacts.html">Контакты проекта</a>
+        </footer>
+        <a class="back-top" href="#top">Наверх ↑</a>
+        <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+            <h2 id="order-dialog-title">Оформление заявки</h2>
+            <form class="order-form" id="order-form" action="#" method="post" novalidate>
+                <p class="form-note">Демонстрация: форма проверяет ввод, но ничего не отправляет и не сохраняет. Поля со * обязательны.</p>
+                <input id="selected-product" name="selected-product" type="hidden">
+                <p id="selected-product-name" class="order-form__selection">
+                </p>
+                <div class="form-field">
+                    <label for="name">Имя *</label>
+                    <input id="name" name="name" type="text" minlength="2" autocomplete="name" required>
+                </div>
+                <div class="form-field">
+                    <label for="email">E-mail *</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="form-field">
+                    <label for="phone">Телефон *</label>
+                    <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" aria-describedby="phone-hint" required>
+                    <small id="phone-hint">Формат: +7 (900) 000-00-00</small>
+                </div>
+                <div class="form-field">
+                    <label for="date">Желаемая дата</label>
+                    <input id="date" name="date" type="date">
+                </div>
+                <div class="form-field">
+                    <label for="topic">Тема обращения *</label>
+                    <select id="topic" name="topic" required>
+                        <option value="">Выберите тему</option>
+                        <option value="product">Заказ товара</option>
+                        <option value="consultation">Консультация</option>
+                        <option value="delivery">Доставка</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="comment">Комментарий</label>
+                    <textarea id="comment" name="comment" rows="3" placeholder="Комментарий к заявке">
+                    </textarea>
+                </div>
+                <div class="form-field form-field--checkbox">
+                    <input id="agreement" name="agreement" type="checkbox" required>
+                    <label for="agreement">Я согласен на обработку данных в учебном примере *</label>
+                </div>
+                <div class="form-actions">
+                    <button class="button button--secondary" id="close-order-dialog" type="button">Закрыть</button>
+                    <button class="button" type="submit">Проверить заявку</button>
+                </div>
+            </form>
+        </dialog>
+        <p class="success-message" id="success-message" role="status" hidden>Поля проверены. Это демонстрация: заявка не отправлена.</p>
+    </body>
 </html>

@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Вымышленные контакты магазина и сведения об авторе проекта.">
-    <meta name="author" content="Чернышев Антон Дмитриевич, ЭФБО-02-25">
-    <title>Контакты и автор — DeskSupply</title>
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
-<body>
-<header class="site-header" id="top"><div class="container site-header__inner">
-    <a class="site-logo" href="index.html" aria-label="DeskSupply — главная"><span class="site-logo__mark" aria-hidden="true">d.</span>DeskSupply</a>
-    <nav class="site-nav" aria-label="Основная навигация"><ul class="site-nav__list">
-        <li><a class="site-nav__link" href="index.html">Главная</a></li>
-        <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-        <li><a class="site-nav__link" href="product.html">Товар</a></li>
-        <li><a class="site-nav__link" href="order.html">Заявка</a></li>
-        <li><a class="site-nav__link" href="contacts.html" aria-current="page">Контакты</a></li>
-    </ul></nav>
-    <span class="site-header__note">Учебный магазин</span>
-</div></header>
-<main class="container">
-<p class="breadcrumbs"><a href="index.html">Главная</a> / Контакты</p><section class="page-intro"><p class="eyebrow">Остаёмся на связи</p><h1>Контакты и информация</h1><p>Все контакты магазина ниже — вымышленные, для демонстрации HTML-разметки.</p></section><div class="contact-grid"><section class="detail-panel" aria-labelledby="support-title"><p class="eyebrow">Демонстрационная поддержка</p><h2 id="support-title">DeskSupply</h2><address class="contact-address"><p><span>E-mail</span><a href="mailto:hello@example.com">hello@example.com</a></p><p><span>Адрес</span>Учебный город, улица Примерная, 1</p><p><span>Режим</span>Пн–Пт, 10:00–18:00 (пример)</p></address><a class="button" href="order.html">Открыть учебную форму ↗</a></section><section class="detail-panel" aria-labelledby="author-title"><p class="eyebrow">Автор проекта</p><h2 id="author-title">Чернышев Антон Дмитриевич</h2><p>Группа ЭФБО-02-25</p><p>Контрольная работа №1 по дисциплине «Фронтенд и бэкенд разработка».</p><p>Проект продолжает практические работы 1–4: структура HTML, семантика, формы и CSS-оформление.</p><a href="https://github.com/AntonXer-1/kr1-html-css-shop">Код и README на GitHub ↗</a></section></div><section class="section" id="faq" aria-labelledby="faq-title"><p class="eyebrow">Полезно знать</p><h2 id="faq-title">Перед выбором</h2><div class="faq">
-<details class="faq__item"><summary>Это настоящий магазин?</summary><p>Нет. Это учебный HTML/CSS-проект. Цены, товары и контакты демонстрационные; покупок и оплаты нет.</p></details>
-<details class="faq__item"><summary>Куда отправляется заявка?</summary><p>Никуда: сейчас форма только проверяет введённые значения в браузере. Сервер и база данных появятся на следующих этапах разработки.</p></details>
-<details class="faq__item"><summary>Как выбрать аксессуары?</summary><p>Для небольшого стола подойдёт компактная клавиатура. Для частых звонков — наушники с микрофоном. Проверьте интерфейс подключения в характеристиках.</p></details>
-</div></section>
-</main>
-<footer class="site-footer" id="contacts"><div class="container site-footer__inner">
-    <div><a class="site-logo" href="index.html">DeskSupply</a><p>Вещи для работы. Пространство для идей.</p></div>
-    <div><a href="contacts.html">Контакты проекта</a><p>Чернышев Антон Дмитриевич · ЭФБО-02-25</p><small>© 2026 · Учебный проект, продажи не осуществляются.</small></div>
-</div></footer>
-<a class="back-top" href="#top" aria-label="Вернуться наверх">↑</a>
-
-
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Контакты учебного интернет-магазина. Контрольная работа №1.">
+        <meta name="author" content="Чернышев Антон Дмитриевич, ЭФБО-02-25">
+        <title>Контакты — Учебный интернет-магазин</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header id="top">
+            <div class="site-header">
+                <a class="site-logo" href="index.html">ShopProject</a>
+                <nav class="site-nav" aria-label="Основная навигация">
+                    <ul class="site-nav__list">
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="index.html">Главная</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="catalog.html">Каталог</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="product.html">Товар</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="order.html">Заявка</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a class="site-nav__link" href="contacts.html" aria-current="page">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="section">
+                <h1>Контакты</h1>
+                <p>Демонстрационный адрес магазина: <a href="mailto:hello@example.com">hello@example.com</a>.</p>
+                <p>Контакты вымышленные. Сайт создан для учебной работы.</p>
+                <h2>Автор проекта</h2>
+                <p>Чернышев Антон Дмитриевич, группа ЭФБО-02-25.</p>
+                <p>Дисциплина: Фронтенд и бэкенд разработка.</p>
+                <a href="order.html">Перейти к форме заявки</a>
+            </section>
+        </main>
+        <footer id="contacts">
+            <p>© 2026 Учебный интернет-магазин.</p>
+            <p>Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
+            <a href="contacts.html">Контакты проекта</a>
+        </footer>
+        <a class="back-top" href="#top">Наверх ↑</a>
+    </body>
 </html>
