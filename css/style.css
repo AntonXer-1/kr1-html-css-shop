@@ -59,6 +59,13 @@ footer {
     background-color: var(--color-surface);
 }
 
+/* Шапка остаётся сверху, не выпадая из потока документа. */
+body > header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 /* ===============================
    3. Общие элементы интерфейса
    =============================== */
@@ -467,7 +474,10 @@ main {
 }
 
 /* Практика №5: переход к разделу и обозначение текущей страницы. */
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height, 160px) + var(--space-sm));
+}
 
 :target {
     outline: 2px dashed var(--color-primary);
@@ -486,6 +496,7 @@ html { scroll-behavior: smooth; }
 }
 
 @media (max-width: 700px) {
+    html { --header-height: 360px; }
     .catalog-layout {
         grid-template-columns: 1fr;
         grid-template-areas: "filters" "products";

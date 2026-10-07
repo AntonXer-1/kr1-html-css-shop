@@ -83,10 +83,15 @@ node --test tests/main.test.mjs
 node --test tests/*.test.mjs
 ```
 
-12 Python-тестов и 23 JS/Chromium-теста проверяют структуру, переходы,
+12 Python-тестов и 25 JS/Chromium-тестов проверяют структуру, переходы,
 форму, состояния CSS и отсутствие переполнения при ширине 375 px.
 
 ## Практическое занятие №5
+
+Шапка закреплена сверху через position: sticky; top: 0; z-index: 10.
+Она сохраняет место в потоке, в отличие от position: fixed.
+js/header.js измеряет её высоту через ResizeObserver; scroll-padding-top
+не даёт якорным разделам скрыться под меню при переносе ссылок.
 
 Сохранены пять страниц и их уникальные title/description. На всех страницах
 одинаковое меню со ссылками index.html#advantages, #popular и #contacts.
