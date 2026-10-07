@@ -31,7 +31,7 @@ class MultipageTests(unittest.TestCase):
                 self.assertTrue(set(PAGES).issubset(links))
                 self.assertEqual(sum(a.get("aria-current") == "page"
                                      for tag, a in elements if tag == "a"), 1)
-                self.assertTrue(any(tag == "link" and a.get("href") == "css/style.css"
+                self.assertTrue(any(tag == "link" and a.get("href", "").split("?", 1)[0] == "css/style.css"
                                     for tag, a in elements))
 
     def test_local_links_and_images_resolve(self):
