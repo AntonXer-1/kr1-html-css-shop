@@ -406,6 +406,25 @@ main {
     bottom: 76px;
 }
 
+/* Практика №5: переход к разделу и обозначение текущей страницы. */
+html { scroll-behavior: smooth; }
+
+:target {
+    outline: 2px dashed var(--color-primary);
+    outline-offset: 4px;
+}
+
+.breadcrumbs {
+    margin: 0 auto var(--space-lg);
+    max-width: var(--container-width);
+}
+
+.breadcrumbs span::before { content: " / "; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+
 @media (max-width: 700px) {
     .product-grid {
         grid-template-columns: 1fr;
