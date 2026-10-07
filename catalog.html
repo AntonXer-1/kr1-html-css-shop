@@ -41,8 +41,29 @@
                 <a href="index.html">Главная</a>
                 <span aria-current="page">Каталог</span>
             </nav>
-            <section class="section">
-                <h1>Каталог товаров</h1>
+            <h1>Каталог товаров</h1>
+            <div class="catalog-layout">
+                <aside class="catalog-filters" aria-labelledby="filters-title">
+                    <h2 id="filters-title">Фильтры</h2>
+                    <form class="filters-form" action="#" method="get">
+                        <fieldset>
+                            <legend>Категория</legend>
+                            <label><input type="checkbox" name="category" value="all"> Все товары</label>
+                            <label><input type="checkbox" name="category" value="popular"> Популярные</label>
+                            <label><input type="checkbox" name="category" value="new"> Новинки</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Цена</legend>
+                            <label for="price-from">Цена от</label>
+                            <input id="price-from" type="number" name="price_from" min="0" placeholder="0">
+                            <label for="price-to">Цена до</label>
+                            <input id="price-to" type="number" name="price_to" min="0" placeholder="5000">
+                        </fieldset>
+                        <button class="button" type="submit" disabled>Применить</button>
+                    </form>
+                    <p class="form-note">Учебный макет: фильтры пока не изменяют список товаров.</p>
+                </aside>
+                <section class="catalog-products" aria-label="Товары каталога">
                 <div class="product-grid">
                     <article class="product-card">
                         <span class="product-card__badge">Популярный</span>
@@ -73,7 +94,8 @@
                         </div>
                     </article>
                 </div>
-            </section>
+                </section>
+            </div>
             <section class="section" id="mouse-details">
                 <h2>Мышь Motion</h2>
                 <p>Беспроводное подключение через USB-приёмник, вес 72 г, разрешение 800–2400 DPI.</p>

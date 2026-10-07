@@ -1,7 +1,7 @@
 # Учебный интернет-магазин ShopProject
 
 Контрольная работа №1: многостраничный сайт на HTML и CSS.
-Продолжение практических занятий №1–5.
+Продолжение практических занятий №1–6.
 
 Автор: **Чернышев Антон Дмитриевич**, группа **ЭФБО-02-25**.
 Дисциплина: «Фронтенд и бэкенд разработка».
@@ -9,6 +9,8 @@
 [Сайт на GitHub Pages](https://antonxer-1.github.io/kr1-html-css-shop/) ·
 [Репозиторий для сдачи](https://github.com/AntonXer-1/kr1-html-css-shop) ·
 [Ответы для защиты](docs/DEFENSE.md)
+
+[Защита практик №5–6](docs/PRACTICE_5_6.md)
 
 ## Структура и страницы
 
@@ -81,7 +83,7 @@ node --test tests/main.test.mjs
 node --test tests/*.test.mjs
 ```
 
-12 Python-тестов и 15 JS/Chromium-тестов проверяют структуру, переходы,
+12 Python-тестов и 23 JS/Chromium-теста проверяют структуру, переходы,
 форму, состояния CSS и отсутствие переполнения при ширине 375 px.
 
 ## Практическое занятие №5
@@ -99,6 +101,31 @@ node --test tests/*.test.mjs
 
 Ветка выполнения: feature/multi-page-navigation. Изменения передаются
 в main через Pull Request.
+
+## Практическое занятие №6
+
+Навигация дополнена justify-content, align-items и оформлением ссылок.
+В catalog.html добавлены колонка фильтров и именованные области Grid.
+Карточки стали Flex-контейнерами с направлением column; margin-top: auto
+у product-card__actions прижимает действия вниз при разной длине описаний.
+Существующая сетка карточек product-grid сохранена.
+
+| Селектор | Назначение |
+| --- | --- |
+| .site-nav__list | Flexbox: меню, перенос, выравнивание, gap |
+| .catalog-layout | Grid: 260px + minmax(0, 1fr), области filters/products |
+| .catalog-filters / .catalog-products | grid-area: размещение в именованных областях |
+| .product-grid | Grid: repeat(3, minmax(0, 1fr)), три карточки |
+| .product-card | Flexbox column: содержимое сверху вниз |
+| .product-card__actions | margin-top: auto: действия у нижнего края |
+| .filters-form | Grid: вертикальные группы полей с gap |
+
+Фильтры — макет для практики по CSS, не настоящая фильтрация.
+Поля доступны, кнопка «Применить» отключена, список не изменяется.
+Уже существующий breakpoint 700px дополнен одной колонкой каталога,
+чтобы новая боковая панель не ломала узкое окно.
+№6 продолжает историю проекта: сочетание Flexbox и именованных областей Grid.
+Ветка: feature/flex-grid-navigation, затем Pull Request в main.
 
 ## Как показать коммит README
 
