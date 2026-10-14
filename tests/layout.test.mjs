@@ -24,7 +24,9 @@ test('catalog has named Grid areas and three product columns', () => catalog(128
     const products = await page.locator('.catalog-products').boundingBox();
     assert.ok(filters.x + filters.width < products.x);
     const cards = await page.locator('.product-card').evaluateAll(els => els.map(el => el.getBoundingClientRect().top));
-    assert.equal(new Set(cards).size, 1);
+    assert.equal(new Set(cards.slice(0, 3)).size, 1);
+    assert.equal(new Set(cards.slice(3, 6)).size, 1);
+    assert.ok(cards[3] > cards[0]);
 }));
 
 test('cards use column Flex and align action rows despite unequal descriptions', () => catalog(1280, async page => {
@@ -36,7 +38,9 @@ test('cards use column Flex and align action rows despite unequal descriptions',
         }), ['flex', 'column']);
     }
     const bottoms = await page.locator('.product-card__actions').evaluateAll(els => els.map(el => el.getBoundingClientRect().bottom));
-    assert.ok(Math.max(...bottoms) - Math.min(...bottoms) < 1);
+    for (const row of [bottoms.slice(0, 3), bottoms.slice(3, 6)]) {
+        assert.ok(Math.max(...row) - Math.min(...row) < 1);
+    }
 }));
 
 test('filters are accessible and honestly identified as a non-functional mockup', () => catalog(1280, async page => {

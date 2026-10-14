@@ -6,8 +6,8 @@
         <meta name="description" content="Каталог учебного интернет-магазина. Контрольная работа №1.">
         <meta name="author" content="Чернышев Антон Дмитриевич, ЭФБО-02-25">
         <title>Каталог — Учебный интернет-магазин</title>
-        <link rel="stylesheet" href="css/style.css?v=20261014-bem">
-        <script src="js/header.js?v=20261014-bem" defer></script>
+        <link rel="stylesheet" href="css/style.css?v=20261014-final">
+        <script src="js/header.js?v=20261014-final" defer></script>
     </head>
     <body>
         <header class="site-header">
@@ -43,6 +43,7 @@
                 <span class="breadcrumbs__current" aria-current="page">Каталог</span>
             </nav>
             <h1>Каталог товаров</h1>
+            <p><a href="#comparison">Сравнить товары</a> · <a href="index.html#faq">Частые вопросы</a></p>
             <div class="catalog-layout">
                 <aside class="catalog-filters" aria-labelledby="filters-title">
                     <h2 class="catalog-filters__title" id="filters-title">Фильтры</h2>
@@ -94,6 +95,33 @@
                             <a class="button button--primary" href="order.html">Заявка</a>
                         </div>
                     </article>
+                    <article class="product-card">
+                        <h3 class="product-card__title">Веб-камера View</h3>
+                        <p class="product-card__description">Камера для видеозвонков и онлайн-занятий.</p>
+                        <p class="product-card__price">2 990 ₽</p>
+                        <div class="product-card__actions">
+                            <a class="product-card__link" href="#camera-details">Подробнее</a>
+                            <a class="button button--primary" href="order.html">Заявка</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <h3 class="product-card__title">USB-концентратор Hub</h3>
+                        <p class="product-card__description">Дополнительные USB-порты для периферии.</p>
+                        <p class="product-card__price">1 790 ₽</p>
+                        <div class="product-card__actions">
+                            <a class="product-card__link" href="#hub-details">Подробнее</a>
+                            <a class="button button--primary" href="order.html">Заявка</a>
+                        </div>
+                    </article>
+                    <article class="product-card">
+                        <h3 class="product-card__title">Коврик Desk</h3>
+                        <p class="product-card__description">Тканевый коврик для рабочего стола.</p>
+                        <p class="product-card__price">990 ₽</p>
+                        <div class="product-card__actions">
+                            <a class="product-card__link" href="#mat-details">Подробнее</a>
+                            <a class="button button--primary" href="order.html">Заявка</a>
+                        </div>
+                    </article>
                 </div>
                 </section>
             </div>
@@ -106,6 +134,57 @@
                 <h2 class="section__title">Наушники Focus</h2>
                 <p>Подключение USB-C, съёмный микрофон, вес 240 г.</p>
                 <a href="order.html">Оставить заявку</a>
+            </section>
+            <section class="section" id="camera-details">
+                <h2 class="section__title">Веб-камера View</h2>
+                <p>Учебная модель: разрешение 1920 × 1080, подключение USB, крепление на монитор.</p>
+                <a href="order.html">Оставить заявку</a>
+            </section>
+            <section class="section" id="hub-details">
+                <h2 class="section__title">USB-концентратор Hub</h2>
+                <p>Учебная модель: четыре USB-порта для мыши, клавиатуры и других устройств.</p>
+                <a href="order.html">Оставить заявку</a>
+            </section>
+            <section class="section" id="mat-details">
+                <h2 class="section__title">Коврик Desk</h2>
+                <p>Учебная модель: размер 800 × 300 мм, тканевая поверхность и нескользящая основа.</p>
+                <a href="order.html">Оставить заявку</a>
+            </section>
+            <section class="section" id="comparison">
+                <h2 class="section__title">Сравнение товаров</h2>
+                <div class="table-scroll" role="region" aria-label="Таблица сравнения товаров" tabindex="0">
+                    <table class="product-table product-table--comparison">
+                        <caption class="product-table__caption">Сравнение трёх учебных моделей</caption>
+                        <thead class="product-table__head">
+                            <tr>
+                                <th class="product-table__cell" scope="col">Параметр</th>
+                                <th class="product-table__cell" scope="col">Клавиатура Quiet</th>
+                                <th class="product-table__cell" scope="col">Мышь Motion</th>
+                                <th class="product-table__cell" scope="col">Наушники Focus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="product-table__cell" scope="row">Назначение</th>
+                                <td class="product-table__cell">Набор текста</td>
+                                <td class="product-table__cell">Управление курсором</td>
+                                <td class="product-table__cell">Звук и звонки</td>
+                            </tr>
+                            <tr>
+                                <th class="product-table__cell" scope="row">Подключение</th>
+                                <td class="product-table__cell">USB-C</td>
+                                <td class="product-table__cell">USB-приёмник</td>
+                                <td class="product-table__cell">USB-C</td>
+                            </tr>
+                            <tr>
+                                <th class="product-table__cell" scope="row">Цена</th>
+                                <td class="product-table__cell">4 990 ₽</td>
+                                <td class="product-table__cell">2 490 ₽</td>
+                                <td class="product-table__cell">6 990 ₽</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
             <aside class="aside-info">
                 <p>Цены и характеристики демонстрационные.</p>
