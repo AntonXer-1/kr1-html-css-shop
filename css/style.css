@@ -48,19 +48,19 @@ body {
     background-color: var(--color-bg);
 }
 
-header,
-main,
-footer {
+.site-header,
+.site-main,
+.site-footer {
     padding: var(--space-lg);
 }
 
-header,
-footer {
+.site-header,
+.site-footer {
     background-color: var(--color-surface);
 }
 
 /* Шапка остаётся сверху, не выпадая из потока документа. */
-body > header {
+.site-header {
     position: sticky;
     top: 0;
     z-index: 10;
@@ -77,7 +77,6 @@ a:hover {
     color: var(--color-primary-dark);
 }
 
-button,
 .button {
     display: inline-block;
     padding: var(--space-sm) var(--space-md);
@@ -90,12 +89,7 @@ button,
     cursor: pointer;
 }
 
-button:hover:not(:disabled) {
-    border-color: var(--color-primary);
-    background-color: var(--color-surface-accent);
-}
-
-.button {
+.button--primary {
     border-color: transparent;
     color: var(--color-white);
     background-color: var(--color-primary);
@@ -127,18 +121,18 @@ textarea:disabled {
 /* ===============================
    4. Компоненты страницы
    =============================== */
-.site-header {
+.site-header__inner {
     max-width: var(--container-width);
     margin: 0 auto;
 }
 
-.site-logo {
+.site-header__logo {
     font-weight: bold;
     color: var(--color-text);
     text-decoration: none;
 }
 
-.site-logo:hover {
+.site-header__logo:hover {
     color: var(--color-primary-dark);
 }
 
@@ -146,18 +140,28 @@ textarea:disabled {
     padding: 0;
     margin: var(--space-md) 0 0;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
 }
 
-.site-nav__list li {
+.site-nav__item {
     margin-bottom: var(--space-sm);
 }
 
-.site-nav__list a {
+.site-nav__link {
     text-decoration: none;
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
 }
 
-.site-nav__list a:hover {
+.site-nav__link:hover {
     text-decoration: underline;
+    color: var(--color-white);
+    background: var(--color-primary);
 }
 
 .hero {
@@ -173,21 +177,30 @@ textarea:disabled {
     margin: 0 auto var(--space-xl);
 }
 
-.section h2,
-.product-card h3,
-.aside-info h2 {
+.section__title,
+.product-card__title,
+.aside-info__title {
     margin-top: 0;
 }
 
 .product-card {
-    margin-bottom: var(--space-md);
     padding: var(--space-md);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     background-color: var(--color-bg);
+    position: relative;
+    padding-top: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: 0;
 }
 
 .product-card:hover {
+    border-color: var(--color-primary);
+}
+
+.product-card--featured {
     border-color: var(--color-primary);
 }
 
@@ -209,29 +222,30 @@ textarea:disabled {
     border-radius: var(--radius-lg);
     color: var(--color-text);
     background-color: var(--color-bg);
+    max-height: calc(100vh - 32px);
 }
 
 .order-dialog::backdrop {
     background-color: var(--color-backdrop);
 }
 
-.order-dialog h2 {
+.order-dialog__title {
     margin-top: 0;
 }
 
-.form-field {
+.order-form__field {
     margin-bottom: var(--space-md);
 }
 
-.form-field label {
+.order-form__label {
     display: block;
     margin-bottom: var(--space-xs);
     font-weight: bold;
 }
 
-.form-field input,
-.form-field select,
-.form-field textarea {
+.order-form__input,
+.order-form__select,
+.order-form__textarea {
     width: 100%;
     padding: var(--space-sm) var(--space-md);
     border: 1px solid var(--color-border);
@@ -243,51 +257,51 @@ textarea:disabled {
 }
 
 /* :where() не повышает специфичность проверки доступности поля. */
-.form-field input:hover:where(:not(:disabled)),
-.form-field select:hover:where(:not(:disabled)),
-.form-field textarea:hover:where(:not(:disabled)),
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus {
+.order-form__input:hover:where(:not(:disabled)),
+.order-form__select:hover:where(:not(:disabled)),
+.order-form__textarea:hover:where(:not(:disabled)),
+.order-form__input:focus,
+.order-form__select:focus,
+.order-form__textarea:focus {
     border-color: var(--color-primary);
 }
 
-.form-field--checkbox {
+.order-form__field--checkbox {
     display: flex;
     align-items: flex-start;
     gap: var(--space-sm);
 }
 
-.form-field--checkbox input {
+.order-form__input--checkbox {
     width: auto;
     margin-top: var(--space-xs);
 }
 
-.form-field--checkbox label {
+.order-form__label--checkbox {
     margin-bottom: 0;
     font-weight: normal;
 }
 
-.form-field small {
+.order-form__hint {
     display: block;
     margin-top: var(--space-xs);
     color: var(--color-muted);
 }
 
 /* Ошибка сохраняет цвет даже при наведении и фокусе, без !important. */
-.form-field input[aria-invalid="true"],
-.form-field select[aria-invalid="true"],
-.form-field textarea[aria-invalid="true"] {
+.order-form__input[aria-invalid="true"],
+.order-form__select[aria-invalid="true"],
+.order-form__textarea[aria-invalid="true"] {
     border-color: var(--color-danger);
     background-color: var(--color-danger-bg);
 }
 
-.form-field input[type="checkbox"][aria-invalid="true"] {
+.order-form__input--checkbox[aria-invalid="true"] {
     /* Ошибка и клавиатурный фокус используют разные визуальные слои. */
     box-shadow: 0 0 0 2px var(--color-danger);
 }
 
-.form-actions {
+.order-form__actions {
     display: flex;
     justify-content: flex-end;
     gap: var(--space-md);
@@ -297,7 +311,6 @@ textarea:disabled {
 .success-message {
     position: fixed;
     right: var(--space-lg);
-    bottom: var(--space-lg);
     max-width: min(calc(100% - var(--space-xl)), var(--container-width));
     margin: 0;
     padding: var(--space-md);
@@ -305,40 +318,25 @@ textarea:disabled {
     border-radius: var(--radius-md);
     color: var(--color-text);
     background-color: var(--color-success-bg);
+    z-index: 3;
+    bottom: 76px;
 }
 
 /* 6. Дополнения контрольной работы: Flex, Grid, БЭМ, позиционирование */
-main {
+.site-main {
     max-width: calc(var(--container-width) + 48px);
     margin: 0 auto;
 }
 
-.site-nav__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-md);
-}
-
-.site-nav__link[aria-current="page"] {
+.site-nav__link--active {
     font-weight: bold;
     text-decoration: underline;
 }
 
-.product-grid {
+.products-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-md);
-}
-
-.product-card {
-    position: relative;
-    padding-top: var(--space-xl);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
-    margin-bottom: 0;
 }
 
 .product-card__title,
@@ -357,6 +355,11 @@ main {
 }
 
 .product-card__price {
+    font-weight: bold;
+}
+
+.product-details__price {
+    margin: 0;
     font-weight: bold;
 }
 
@@ -384,19 +387,18 @@ main {
     border-collapse: collapse;
 }
 
-.product-table caption {
+.product-table__caption {
     margin-bottom: var(--space-sm);
     text-align: left;
 }
 
-.product-table th,
-.product-table td {
+.product-table__cell {
     padding: var(--space-sm);
     border: 1px solid var(--color-border);
     text-align: left;
 }
 
-.product-table thead {
+.product-table__head {
     background: var(--color-surface);
 }
 
@@ -404,13 +406,10 @@ main {
     max-width: var(--dialog-width);
 }
 
-.form-note {
+.order-form__note,
+.catalog-filters__note {
     color: var(--color-muted);
     font-size: 14px;
-}
-
-.order-dialog {
-    max-height: calc(100vh - 32px);
 }
 
 .button--secondary {
@@ -419,22 +418,7 @@ main {
     border-color: var(--color-border);
 }
 
-.success-message {
-    z-index: 3;
-    bottom: 76px;
-}
-
 /* Практика №6: внешний Grid и внутренний Flexbox. */
-.site-nav__link {
-    display: inline-block;
-    padding: var(--space-sm) var(--space-md);
-    border-radius: var(--radius-sm);
-}
-
-.site-nav__link:hover {
-    color: var(--color-white);
-    background: var(--color-primary);
-}
 
 .catalog-layout {
     display: grid;
@@ -454,17 +438,17 @@ main {
 }
 
 .catalog-products { grid-area: products; min-width: 0; }
-.catalog-filters h2 { margin-top: 0; }
+.catalog-filters__title { margin-top: 0; }
 .filters-form { display: grid; gap: var(--space-md); }
-.filters-form fieldset {
+.filters-form__group {
     margin: 0;
     padding: var(--space-md);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
 }
-.filters-form legend { font-weight: bold; }
-.filters-form label { display: block; margin-bottom: var(--space-sm); }
-.filters-form input[type="number"] {
+.filters-form__legend { font-weight: bold; }
+.filters-form__label { display: block; margin-bottom: var(--space-sm); }
+.filters-form__input {
     width: 100%;
     margin-bottom: var(--space-sm);
     padding: var(--space-sm);
@@ -489,7 +473,9 @@ html {
     max-width: var(--container-width);
 }
 
-.breadcrumbs span::before { content: " / "; }
+.breadcrumbs__current::before { content: " / "; }
+
+.breadcrumbs__link { color: var(--color-primary); }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -501,7 +487,7 @@ html {
         grid-template-columns: 1fr;
         grid-template-areas: "filters" "products";
     }
-    .product-grid {
+    .products-grid {
         grid-template-columns: 1fr;
     }
 }

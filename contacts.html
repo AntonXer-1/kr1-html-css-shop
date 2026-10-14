@@ -6,13 +6,13 @@
         <meta name="description" content="Контакты учебного интернет-магазина. Контрольная работа №1.">
         <meta name="author" content="Чернышев Антон Дмитриевич, ЭФБО-02-25">
         <title>Контакты — Учебный интернет-магазин</title>
-        <link rel="stylesheet" href="css/style.css?v=20261007-header">
-        <script src="js/header.js?v=20261007-header" defer></script>
+        <link rel="stylesheet" href="css/style.css?v=20261014-bem">
+        <script src="js/header.js?v=20261014-bem" defer></script>
     </head>
     <body>
-        <header>
-            <div class="site-header">
-                <a class="site-logo" href="index.html">ShopProject</a>
+        <header class="site-header">
+            <div class="site-header__inner">
+                <a class="site-header__logo" href="index.html">ShopProject</a>
                 <nav class="site-nav" aria-label="Основная навигация">
                     <ul class="site-nav__list">
                         <li class="site-nav__item">
@@ -28,7 +28,7 @@
                             <a class="site-nav__link" href="order.html">Заявка</a>
                         </li>
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="contacts.html" aria-current="page">Контакты</a>
+                            <a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a>
                         </li>
                         <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
                         <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
@@ -37,22 +37,22 @@
                 </nav>
             </div>
         </header>
-        <main id="top">
+        <main class="site-main" id="top">
             <nav class="breadcrumbs" aria-label="Хлебные крошки">
-                <a href="index.html">Главная</a>
-                <span aria-current="page">Контакты</span>
+                <a class="breadcrumbs__link" href="index.html">Главная</a>
+                <span class="breadcrumbs__current" aria-current="page">Контакты</span>
             </nav>
             <section class="section">
                 <h1>Контакты</h1>
                 <p>Демонстрационный адрес магазина: <a href="mailto:hello@example.com">hello@example.com</a>.</p>
                 <p>Контакты вымышленные. Сайт создан для учебной работы.</p>
-                <h2>Автор проекта</h2>
+                <h2 class="section__title">Автор проекта</h2>
                 <p>Чернышев Антон Дмитриевич, группа ЭФБО-02-25.</p>
                 <p>Дисциплина: Фронтенд и бэкенд разработка.</p>
                 <a href="order.html">Перейти к форме заявки</a>
             </section>
         </main>
-        <footer id="contacts">
+        <footer class="site-footer" id="contacts">
             <p>© 2026 Учебный интернет-магазин.</p>
             <p>Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
             <a href="contacts.html">Контакты проекта</a>

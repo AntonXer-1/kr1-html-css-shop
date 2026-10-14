@@ -1,7 +1,7 @@
 # Учебный интернет-магазин ShopProject
 
 Контрольная работа №1: многостраничный сайт на HTML и CSS.
-Продолжение практических занятий №1–6.
+Продолжение практических занятий №1–7.
 
 Автор: **Чернышев Антон Дмитриевич**, группа **ЭФБО-02-25**.
 Дисциплина: «Фронтенд и бэкенд разработка».
@@ -11,6 +11,8 @@
 [Ответы для защиты](docs/DEFENSE.md)
 
 [Защита практик №5–6](docs/PRACTICE_5_6.md)
+
+[Аудит и защита практики №7](docs/PRACTICE_7.md)
 
 ## Структура и страницы
 
@@ -83,7 +85,7 @@ node --test tests/main.test.mjs
 node --test tests/*.test.mjs
 ```
 
-12 Python-тестов и 25 JS/Chromium-тестов проверяют структуру, переходы,
+16 Python-тестов и 25 JS/Chromium-тестов проверяют структуру, переходы,
 форму, состояния CSS и отсутствие переполнения при ширине 375 px.
 
 ## Практическое занятие №5
@@ -131,6 +133,35 @@ js/header.js измеряет её высоту через ResizeObserver; scrol
 чтобы новая боковая панель не ломала узкое окно.
 №6 продолжает историю проекта: сочетание Flexbox и именованных областей Grid.
 Ветка: feature/flex-grid-navigation, затем Pull Request в main.
+
+## Практическое занятие №7 и БЭМ структура
+
+В ветке refactor/bem-css-classes выполнен аудит и БЭМ-рефакторинг
+всех пяти страниц. Старые form-field/form-actions заменены элементами
+order-form, site-logo — site-header__logo. Шапка стала блоком site-header
+с элементом site-header__inner. Сетка переименована в products-grid.
+Хлебные крошки, фильтры, таблица и модальное окно получили классы элементов.
+Повторяющиеся правила компонентов объединены, вложенные селекторы уплощены.
+
+Основные блоки: site-header, site-nav, breadcrumbs, hero, section,
+products-grid, product-card, catalog-layout, catalog-filters, catalog-products,
+filters-form, order-dialog, order-form, button, site-footer, success-message.
+
+Примеры элементов: site-header__logo, breadcrumbs__current,
+order-form__label, order-form__input, order-dialog__title.
+Примеры модификаторов: site-nav__link--active, product-card--featured,
+button--primary, button--secondary, order-form__input--checkbox.
+Модификатор всегда используется вместе с базовым классом.
+
+Дизайн сохранён: лишь карточка с бейджем «Популярный» получила тонкую синюю
+рамку как пример featured. Поля, валидация, dialog, закрепление меню,
+якоря и :focus-visible продолжают работать. id остались для JS, label и
+якорей, в CSS нет id-селекторов; в исходном HTML нет style-атрибутов.
+js/header.js по-прежнему обновляет только вычисляемую CSS-переменную
+высоты шапки, необходимую для отступа якорей.
+
+№7 завершает историю практик: после структуры, форм, CSS-переменных,
+навигации и Flex/Grid упорядочены имена компонентов.
 
 ## Как показать коммит README
 

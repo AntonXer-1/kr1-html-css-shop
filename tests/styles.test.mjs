@@ -32,7 +32,7 @@ test('changing the primary token updates buttons, links and the aside accent', (
 test('keyboard focus is visible on links, buttons and form fields', () => withPage(async (page) => {
     await page.evaluate(() => document.documentElement.style.setProperty('--color-primary', '#663399'));
     await page.keyboard.press('Tab');
-    const logo = page.locator('.site-header .site-logo');
+    const logo = page.locator('.site-header .site-header__logo');
     assert.equal(await logo.evaluate((element) => element.matches(':focus-visible')), true);
     assert.notEqual(await logo.evaluate((element) => getComputedStyle(element).outlineStyle), 'none');
     assert.equal(await logo.evaluate((element) => getComputedStyle(element).outlineColor), 'rgb(102, 51, 153)');

@@ -14,7 +14,7 @@
    галочки и цена вводятся, но отключённая кнопка не фильтрует список.
 6. В DevTools открыть .catalog-layout: display: grid, две колонки,
    grid-template-areas: "filters products". Включить Grid overlay.
-7. Открыть .product-grid: три колонки. Затем .product-card: display: flex,
+7. Открыть .products-grid: три колонки. Затем .product-card: display: flex,
    flex-direction: column; .product-card__actions: margin-top: auto.
    С длинным описанием действия всё равно находятся внизу карточек.
 8. Показать .site-nav__list: Flex, wrap, center, gap. Сузить окно:
