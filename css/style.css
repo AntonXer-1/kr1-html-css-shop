@@ -481,6 +481,25 @@ html {
     html { scroll-behavior: auto; }
 }
 
+/* Практика №8: простые дополнения без смены оформления. */
+.product-details__figure { margin: var(--space-md) 0; }
+.product-details__image { display: block; max-width: 100%; height: auto; }
+.product-details__caption { color: var(--color-muted); font-size: 14px; }
+.product-details__title { margin-bottom: var(--space-sm); }
+.faq__item {
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+.faq__question { cursor: pointer; font-weight: bold; }
+.faq__question:focus-visible,
+.table-scroll:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+.faq__answer { margin-bottom: 0; }
+.table-scroll { max-width: 100%; overflow-x: auto; }
+.product-table--comparison { min-width: 600px; }
+
 @media (max-width: 700px) {
     html { --header-height: 360px; }
     .catalog-layout {

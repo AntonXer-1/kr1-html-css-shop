@@ -79,7 +79,8 @@ class MultipageTests(unittest.TestCase):
         detail_links = [a["href"] for tag, a in read_page("catalog.html")
                         if tag == "a" and "product-card__link" in a.get("class", "").split()]
         self.assertEqual(detail_links, ["product.html", "catalog.html#mouse-details",
-                                        "catalog.html#headphones-details"])
+                                        "catalog.html#headphones-details", "#camera-details",
+                                        "#hub-details", "#mat-details"])
 
 
 if __name__ == "__main__":
