@@ -6,20 +6,20 @@
         <meta name="description" content="Каталог учебного интернет-магазина. Контрольная работа №1.">
         <meta name="author" content="Чернышев Антон Дмитриевич, ЭФБО-02-25">
         <title>Каталог — Учебный интернет-магазин</title>
-        <link rel="stylesheet" href="css/style.css?v=20261007-header">
-        <script src="js/header.js?v=20261007-header" defer></script>
+        <link rel="stylesheet" href="css/style.css?v=20261014-bem">
+        <script src="js/header.js?v=20261014-bem" defer></script>
     </head>
     <body>
-        <header>
-            <div class="site-header">
-                <a class="site-logo" href="index.html">ShopProject</a>
+        <header class="site-header">
+            <div class="site-header__inner">
+                <a class="site-header__logo" href="index.html">ShopProject</a>
                 <nav class="site-nav" aria-label="Основная навигация">
                     <ul class="site-nav__list">
                         <li class="site-nav__item">
                             <a class="site-nav__link" href="index.html">Главная</a>
                         </li>
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="catalog.html" aria-current="page">Каталог</a>
+                            <a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a>
                         </li>
                         <li class="site-nav__item">
                             <a class="site-nav__link" href="product.html">Товар</a>
@@ -37,43 +37,43 @@
                 </nav>
             </div>
         </header>
-        <main id="top">
+        <main class="site-main" id="top">
             <nav class="breadcrumbs" aria-label="Хлебные крошки">
-                <a href="index.html">Главная</a>
-                <span aria-current="page">Каталог</span>
+                <a class="breadcrumbs__link" href="index.html">Главная</a>
+                <span class="breadcrumbs__current" aria-current="page">Каталог</span>
             </nav>
             <h1>Каталог товаров</h1>
             <div class="catalog-layout">
                 <aside class="catalog-filters" aria-labelledby="filters-title">
-                    <h2 id="filters-title">Фильтры</h2>
+                    <h2 class="catalog-filters__title" id="filters-title">Фильтры</h2>
                     <form class="filters-form" action="#" method="get">
-                        <fieldset>
-                            <legend>Категория</legend>
-                            <label><input type="checkbox" name="category" value="all"> Все товары</label>
-                            <label><input type="checkbox" name="category" value="popular"> Популярные</label>
-                            <label><input type="checkbox" name="category" value="new"> Новинки</label>
+                        <fieldset class="filters-form__group">
+                            <legend class="filters-form__legend">Категория</legend>
+                            <label class="filters-form__label"><input type="checkbox" name="category" value="all"> Все товары</label>
+                            <label class="filters-form__label"><input type="checkbox" name="category" value="popular"> Популярные</label>
+                            <label class="filters-form__label"><input type="checkbox" name="category" value="new"> Новинки</label>
                         </fieldset>
-                        <fieldset>
-                            <legend>Цена</legend>
-                            <label for="price-from">Цена от</label>
-                            <input id="price-from" type="number" name="price_from" min="0" placeholder="0">
-                            <label for="price-to">Цена до</label>
-                            <input id="price-to" type="number" name="price_to" min="0" placeholder="5000">
+                        <fieldset class="filters-form__group">
+                            <legend class="filters-form__legend">Цена</legend>
+                            <label class="filters-form__label" for="price-from">Цена от</label>
+                            <input class="filters-form__input" id="price-from" type="number" name="price_from" min="0" placeholder="0">
+                            <label class="filters-form__label" for="price-to">Цена до</label>
+                            <input class="filters-form__input" id="price-to" type="number" name="price_to" min="0" placeholder="5000">
                         </fieldset>
-                        <button class="button" type="submit" disabled>Применить</button>
+                        <button class="button button--primary" type="submit" disabled>Применить</button>
                     </form>
-                    <p class="form-note">Учебный макет: фильтры пока не изменяют список товаров.</p>
+                    <p class="catalog-filters__note">Учебный макет: фильтры пока не изменяют список товаров.</p>
                 </aside>
                 <section class="catalog-products" aria-label="Товары каталога">
-                <div class="product-grid">
-                    <article class="product-card">
+                <div class="products-grid">
+                    <article class="product-card product-card--featured">
                         <span class="product-card__badge">Популярный</span>
                         <h3 class="product-card__title">Клавиатура Quiet</h3>
                         <p class="product-card__description">Компактная проводная клавиатура.</p>
                         <p class="product-card__price">4 990 ₽</p>
                         <div class="product-card__actions">
                             <a class="product-card__link" href="product.html">Подробнее</a>
-                            <a class="button" href="order.html">Заявка</a>
+                            <a class="button button--primary" href="order.html">Заявка</a>
                         </div>
                     </article>
                     <article class="product-card">
@@ -82,7 +82,7 @@
                         <p class="product-card__price">2 490 ₽</p>
                         <div class="product-card__actions">
                             <a class="product-card__link" href="catalog.html#mouse-details">Подробнее</a>
-                            <a class="button" href="order.html">Заявка</a>
+                            <a class="button button--primary" href="order.html">Заявка</a>
                         </div>
                     </article>
                     <article class="product-card">
@@ -91,28 +91,28 @@
                         <p class="product-card__price">6 990 ₽</p>
                         <div class="product-card__actions">
                             <a class="product-card__link" href="catalog.html#headphones-details">Подробнее</a>
-                            <a class="button" href="order.html">Заявка</a>
+                            <a class="button button--primary" href="order.html">Заявка</a>
                         </div>
                     </article>
                 </div>
                 </section>
             </div>
             <section class="section" id="mouse-details">
-                <h2>Мышь Motion</h2>
+                <h2 class="section__title">Мышь Motion</h2>
                 <p>Беспроводное подключение через USB-приёмник, вес 72 г, разрешение 800–2400 DPI.</p>
                 <a href="order.html">Оставить заявку</a>
             </section>
             <section class="section" id="headphones-details">
-                <h2>Наушники Focus</h2>
+                <h2 class="section__title">Наушники Focus</h2>
                 <p>Подключение USB-C, съёмный микрофон, вес 240 г.</p>
                 <a href="order.html">Оставить заявку</a>
             </section>
             <aside class="aside-info">
                 <p>Цены и характеристики демонстрационные.</p>
-                <button type="button" disabled>Покупка пока недоступна</button>
+                <button class="button button--secondary" type="button" disabled>Покупка пока недоступна</button>
             </aside>
         </main>
-        <footer id="contacts">
+        <footer class="site-footer" id="contacts">
             <p>© 2026 Учебный интернет-магазин.</p>
             <p>Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
             <a href="contacts.html">Контакты проекта</a>

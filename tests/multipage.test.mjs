@@ -53,7 +53,7 @@ test('modal reopens without stale errors and keeps chosen product', () => open('
     assert.equal(await page.locator('#selected-product').inputValue(), 'Мышь Motion');
 }));
 test('catalog grid and navigation flex are used for real layout', () => open('catalog.html', async page => {
-    assert.equal(await page.locator('.product-grid').evaluate(el => getComputedStyle(el).display), 'grid');
+    assert.equal(await page.locator('.products-grid').evaluate(el => getComputedStyle(el).display), 'grid');
     assert.equal(await page.locator('.site-nav__list').evaluate(el => getComputedStyle(el).display), 'flex');
     const boxes = await page.locator('.product-card').evaluateAll(cards => cards.map(el => el.getBoundingClientRect().x));
     assert.equal(new Set(boxes).size, 3);

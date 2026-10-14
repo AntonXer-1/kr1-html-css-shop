@@ -6,13 +6,13 @@
         <meta name="description" content="Товар учебного интернет-магазина. Контрольная работа №1.">
         <meta name="author" content="Чернышев Антон Дмитриевич, ЭФБО-02-25">
         <title>Товар — Учебный интернет-магазин</title>
-        <link rel="stylesheet" href="css/style.css?v=20261007-header">
-        <script src="js/header.js?v=20261007-header" defer></script>
+        <link rel="stylesheet" href="css/style.css?v=20261014-bem">
+        <script src="js/header.js?v=20261014-bem" defer></script>
     </head>
     <body>
-        <header>
-            <div class="site-header">
-                <a class="site-logo" href="index.html">ShopProject</a>
+        <header class="site-header">
+            <div class="site-header__inner">
+                <a class="site-header__logo" href="index.html">ShopProject</a>
                 <nav class="site-nav" aria-label="Основная навигация">
                     <ul class="site-nav__list">
                         <li class="site-nav__item">
@@ -22,7 +22,7 @@
                             <a class="site-nav__link" href="catalog.html">Каталог</a>
                         </li>
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="product.html" aria-current="page">Товар</a>
+                            <a class="site-nav__link site-nav__link--active" href="product.html" aria-current="page">Товар</a>
                         </li>
                         <li class="site-nav__item">
                             <a class="site-nav__link" href="order.html">Заявка</a>
@@ -37,50 +37,50 @@
                 </nav>
             </div>
         </header>
-        <main id="top">
+        <main class="site-main" id="top">
             <nav class="breadcrumbs" aria-label="Хлебные крошки">
-                <a href="index.html">Главная</a>
-                <span aria-current="page">Товар</span>
+                <a class="breadcrumbs__link" href="index.html">Главная</a>
+                <span class="breadcrumbs__current" aria-current="page">Товар</span>
             </nav>
-            <section class="section">
+            <section class="section product-details">
                 <h1>Клавиатура Quiet</h1>
                 <p>Компактная клавиатура для работы и учёбы.</p>
-                <p class="product-card__price">Цена: 4 990 ₽</p>
-                <a class="button" href="order.html">Оставить заявку</a>
+                <p class="product-details__price">Цена: 4 990 ₽</p>
+                <a class="button button--primary" href="order.html">Оставить заявку</a>
                 <a href="#specifications">Характеристики</a>
             </section>
             <section class="section" id="specifications">
-                <h2>Характеристики товара</h2>
+                <h2 class="section__title">Характеристики товара</h2>
                 <table class="product-table">
-                    <caption>Клавиатура Quiet — учебная модель</caption>
-                    <thead>
+                    <caption class="product-table__caption">Клавиатура Quiet — учебная модель</caption>
+                    <thead class="product-table__head">
                         <tr>
-                            <th scope="col">Параметр</th>
-                            <th scope="col">Значение</th>
+                            <th class="product-table__cell" scope="col">Параметр</th>
+                            <th class="product-table__cell" scope="col">Значение</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Подключение</th>
-                            <td>USB-C</td>
+                            <th class="product-table__cell" scope="row">Подключение</th>
+                            <td class="product-table__cell">USB-C</td>
                         </tr>
                         <tr>
-                            <th scope="row">Формат</th>
-                            <td>Компактная, 75%</td>
+                            <th class="product-table__cell" scope="row">Формат</th>
+                            <td class="product-table__cell">Компактная, 75%</td>
                         </tr>
                         <tr>
-                            <th scope="row">Раскладка</th>
-                            <td>Русская и английская</td>
+                            <th class="product-table__cell" scope="row">Раскладка</th>
+                            <td class="product-table__cell">Русская и английская</td>
                         </tr>
                         <tr>
-                            <th scope="row">Размеры</th>
-                            <td>320 × 125 × 20 мм</td>
+                            <th class="product-table__cell" scope="row">Размеры</th>
+                            <td class="product-table__cell">320 × 125 × 20 мм</td>
                         </tr>
                     </tbody>
                 </table>
             </section>
         </main>
-        <footer id="contacts">
+        <footer class="site-footer" id="contacts">
             <p>© 2026 Учебный интернет-магазин.</p>
             <p>Чернышев Антон Дмитриевич · ЭФБО-02-25</p>
             <a href="contacts.html">Контакты проекта</a>
